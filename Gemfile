@@ -3,6 +3,41 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
+gem 'amazing_print'
+gem 'colorize'
+gem 'jsonapi-serializer'
+gem 'versionist'
+gem 'rpush'
+
+group :development do
+  gem 'spring-commands-rspec'
+end
+
+group :development, :test do
+  gem 'brakeman'
+  gem 'annotate'
+  gem 'pry-rails'
+  gem 'dotenv-rails', require: true
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
+  gem 'ffaker'
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'simplecov', require: false
+  gem 'rspec_helpers', git: 'https://gitlab.com/masys/rspec_helpers.git', tag: '0.4.3', require: false
+end
+
+group :production, :staging do
+  gem 'rails_12factor'
+  gem 'exception_notification'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 # Use postgresql as the database for Active Record
@@ -23,7 +58,7 @@ gem 'puma', '~> 5.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

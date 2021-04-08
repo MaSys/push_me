@@ -1,0 +1,70 @@
+require: rubocop-rspec
+AllCops:
+  SuggestExtensions: false
+  EnabledByDefault: true
+  Exclude:
+    - '**/Rakefile'
+    - '**/config.ru'
+    - 'Gemfile'
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+    - "lib/tasks/**/*"
+    - "**/vendor/**/*"
+    - "./vendor/**/*"
+    - "vendor/**/*"
+    - "vendor/*"
+    - "vendor/"
+    - "vendor"
+
+Metrics/ClassLength:
+  Exclude:
+    - "app/models/igdb/game.rb"
+
+Style/Copyright:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Exclude:
+    - "**/*_spec.rb"
+
+Metrics/MethodLength:
+  Exclude:
+    - "app/models/ability.rb"
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - "app/controllers/**/*"
+    - "app/models/**/*"
+    - "app/serializers/**/*"
+
+Layout/LineLength:
+  Max: 100
+  IgnoredPatterns: ['\A#']
+
+Lint/NumberConversion:
+  Enabled: false
+
+Lint/ConstantResolution:
+  Enabled: false
+
+RSpec/AlignRightLetBrace:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+Style/DisableCopsWithinSourceCodeDirective:
+  Enabled: false
+
+Lint/RedundantCopDisableDirective:
+  Enabled: false
+Lint/RedundantCopEnableDirective:
+  Enabled: false
