@@ -1,3 +1,17 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  namespace(:api, defaults: { format: :json }, path: '/api') do
+    api_version(
+      module: 'V1',
+      path: { value: 'v1' },
+      defaults: { format: :json },
+      default: true
+    ) do
+      resources :notifications, only: [] do
+        collection do
+          post :apnsp8
+        end
+      end
+    end
+  end
 end
