@@ -49,30 +49,30 @@ POST /api/v1/notifications/apnsp8
 Alert notification:
 ```json
 {
-	"notification": {
-		"app_name": "",
-		"device_token": "",
-		"alert": "if you are sending an alert",
-		"data": {
-			"foo": "bar"
-		}
-	}
+    "notification": {
+        "app_name": "",
+        "device_token": "",
+        "alert": "if you are sending an alert",
+        "data": {
+            "foo": "bar"
+        }
+    }
 }
 ```
 Background notification:
 ```json
 {
-	"notification": {
-		"app_name": "",
-		"device_token": "",
-		"content_available": true,
-		"data": {
+    "notification": {
+        "app_name": "",
+        "device_token": "",
+        "content_available": true,
+        "data": {
             "headers": {
                 "apns-push-type": "background"
             },
-			"foo": "bar"
-		}
-	}
+            "foo": "bar"
+        }
+    }
 }
 ```
 
